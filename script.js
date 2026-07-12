@@ -40,19 +40,19 @@ function playRound(playerChoice) {
     resultMessage.className = 'result-message'; // Reset animation classes
 
     // 4. Simulate a delay before answering (800ms)
+
+    // Generate computer choice
+    const compChoice = choices[Math.floor(Math.random() * choices.length)];
+    compChoiceBox.textContent = emojis[compChoice];
+
+    // Determine winner
+    determineWinner(playerChoice, compChoice);
     setTimeout(() => {
-        // Stop thinking animation
-        compChoiceBox.classList.remove('thinking');
+    // Stop thinking animation
+    compChoiceBox.classList.remove('thinking');
 
-        // Generate computer choice
-        const compChoice = choices[Math.floor(Math.random() * choices.length)];
-        compChoiceBox.textContent = emojis[compChoice];
-
-        // Determine winner
-        determineWinner(playerChoice, compChoice);
-
-        // Unlock buttons
-        toggleButtons(false);
+    // Unlock buttons
+    toggleButtons(false);
     }, 800);
 }
 
