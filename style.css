@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: 'Poppins', sans-serif;
+}
+
+body {
+background-color: #1a1a2e;
+color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+}
+
+.game-container {
+background: #16213e;
+padding: 2rem;
+border-radius: 15px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+text-align: center;
+width: 100%;
+max-width: 500px;
+}
+
+h1 {
+margin-bottom: 2rem;
+color: #e94560;
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+
+/* Scoreboard */
+.scoreboard {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: #0f3460;
+padding: 1rem;
+border-radius: 10px;
+margin-bottom: 2rem;
+}
+
+.score-card {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 40%;
+}
+
+.score-card input {
+background: transparent;
+border: none;
+border-bottom: 2px solid #e94560;
+color: #fff;
+text-align: center;
+font-size: 1.1rem;
+font-weight: bold;
+width: 100%;
+outline: none;
+padding-bottom: 5px;
+}
+
+.comp-name {
+font-size: 1.1rem;
+font-weight: bold;
+padding-bottom: 5px;
+border-bottom: 2px solid #e94560;
+}
+
+.score {
+font-size: 2.5rem;
+font-weight: bold;
+margin-top: 10px;
+}
+
+.vs-badge {
+font-size: 1.5rem;
+font-weight: bold;
+color: #e94560;
+}
+
+/* Colorful Buttons */
+.choices {
+display: flex;
+justify-content: space-between;
+gap: 10px;
+margin-bottom: 2rem;
+}
+
+.choice-btn {
+flex: 1;
+padding: 15px 10px;
+border: none;
+border-radius: 8px;
+font-size: 1.1rem;
+font-weight: bold;
+cursor: pointer;
+color: white;
+transition: transform 0.2s, filter 0.2s;
+}
+
+.choice-btn:hover:not(:disabled) {
+transform: translateY(-5px);
+filter: brightness(1.2);
+}
+
+.choice-btn:active:not(:disabled) {
+transform: translateY(0);
+}
+
+.choice-btn:disabled {
+cursor: not-allowed;
+opacity: 0.6;
+}
+
+.rock {
+background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+.paper {
+background: linear-gradient(135deg, #36d1dc, #5b86e5);
+}
+
+.scissors {
+background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+/* Arena Display */
+.arena {
+display: flex;
+justify-content: space-around;
+margin-bottom: 1.5rem;
+}
+
+.choice-display {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+}
+
+.box {
+width: 80px;
+height: 80px;
+background: #0f3460;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 2.5rem;
+box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+.thinking {
+animation: pulse 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+0% {
+transform: scale(0.9);
+opacity: 0.7;
+}
+
+100% {
+transform: scale(1.1);
+opacity: 1;
+}
+}
+
+.result-message {
+font-size: 1.5rem;
+font-weight: bold;
+min-height: 40px;
+padding: 10px;
+border-radius: 8px;
+transition: all 0.3s ease;
+}
+
+.win-anim {
+animation: winPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+background-color: #38ef7d;
+color: #1a1a2e;
+}
+
+.lose-anim {
+animation: winPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+background-color: #ff4b2b;
+}
+
+.tie-anim {
+animation: winPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+background-color: #fce043;
+color: #1a1a2e;
+}
+
+@keyframes winPop {
+0% {
+transform: scale(0.5);
+opacity: 0;
+}
+
+50% {
+transform: scale(1.1);
+}
+
+100% {
+transform: scale(1);
+opacity: 1;
+}
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Clash</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <h1>Rock, Paper, Scissors</h1>
+
+        <div class="scoreboard">
+            <div class="score-card player-card">
+                <input type="text" id="playerName" value="Player 1" placeholder="Enter Name">
+                <div id="playerScore" class="score">0</div>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="score-card comp-card">
+                <div class="comp-name">Computer</div>
+                <div id="compScore" class="score">0</div>
+            </div>
+        </div>
+
+        <div class="choices">
+            <button class="choice-btn rock" data-choice="rock">🪨 Rock</button>
+            <button class="choice-btn paper" data-choice="paper">📄 Paper</button>
+            <button class="choice-btn scissors" data-choice="scissors">✂️ Scissors</button>
+        </div>
+
+        <div class="arena">
+            <div class="choice-display">
+                <span>You:</span>
+                <div id="playerChoiceBox" class="box">👤</div>
+            </div>
+            <div class="choice-display">
+                <span>Computer:</span>
+                <div id="compChoiceBox" class="box">🤖</div>
+            </div>
+        </div>
+
+        <div id="resultMessage" class="result-message">Make your move!</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
